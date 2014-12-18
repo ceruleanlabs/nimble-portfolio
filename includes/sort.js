@@ -22,10 +22,10 @@ jQuery(document).ready(function($) {
         }
 
         // Apply lightbox gallery only to current items
-        $('.nimble-portfolio').trigger("nimble_portfolio_lightbox", {items: $("a[rel^='nimblebox']", ".nimble-portfolio .-item:not(.hidden)")});
+        // $('.nimble-portfolio').trigger("nimble_portfolio_lightbox", {items: $("a[rel^='nimblebox']", ".nimble-portfolio .-item:not(.hidden)")});
     });
 
     // Apply lightbox gallery
-    $('.nimble-portfolio').trigger("nimble_portfolio_lightbox", {items: $("a[rel^='nimblebox']")});
+    // $('.nimble-portfolio').trigger("nimble_portfolio_lightbox", {items: $("a[rel^='nimblebox']")});
 
 });
