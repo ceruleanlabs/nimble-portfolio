@@ -14,23 +14,23 @@ jQuery(document).ready(function($) {
 
         var filterVal = $(this).attr('rel');
         if (filterVal === '*') {
-          if ($.isFunction($.fn.quicksand)) {
-            $('.nimble-portfolio .-items').quicksand($items.find('.-item'), { attribute: 'id' } );
-          } else {
-            $('.nimble-portfolio .-item.hidden').fadeIn('normal').removeClass('hidden');
-          }            
+	    if ($.isFunction($.fn.quicksand)) {
+		$('.nimble-portfolio .-items').quicksand($items.find('.-item'), { attribute: 'id' }, function(){ $('.nimble-portfolio .-items').css({ width: 'auto', height: 'auto' }); } );
+	    } else {
+		$('.nimble-portfolio .-item.hidden').fadeIn('normal').removeClass('hidden');
+	    }            
         } else {
-          if ($.isFunction($.fn.quicksand)) {
-            $('.nimble-portfolio .-items').quicksand($items.find('.' + filterVal), { attribute: 'id' });
-          } else {
-            $('.nimble-portfolio .-item').each(function() {
-              if (!$(this).hasClass(filterVal)) {
-                $(this).fadeOut('slow').addClass('hidden');
-              } else {
-                $(this).fadeIn('slow').removeClass('hidden');
-              }
-            });
-	        }
+	    if ($.isFunction($.fn.quicksand)) {
+		$('.nimble-portfolio .-items').quicksand($items.find('.' + filterVal), { attribute: 'id' }, function(){ $('.nimble-portfolio .-items').css({ width: 'auto', height: 'auto' })} );
+	    } else {
+		$('.nimble-portfolio .-item').each(function() {
+                  if (!$(this).hasClass(filterVal)) {
+                    $(this).fadeOut('slow').addClass('hidden');
+                  } else {
+                    $(this).fadeIn('slow').removeClass('hidden');
+                  }
+                });
+	    }
         }
 
         // Apply lightbox gallery only to current items
